@@ -1,4 +1,4 @@
-FROM node:13.12.0-buster                                                                       
+FROM node:13.12.0-buster
 
 # do not run as root
 RUN groupadd -g 999 appuser && useradd -m -d /appdata -r -u 999 -g appuser appuser
@@ -22,7 +22,7 @@ RUN yarn run hexo generate
 COPY --chown=appuser tsconfig.json package.json yarn.lock /appdata/
 #COPY --chown=appuser local_registry /appdata/local_registry
 WORKDIR /appdata
-RUN yarn install
+RUN yarn install --network-timeout 1000000
 
 # config
 COPY --chown=appuser tsconfig.server.json webpack.server.config.js /appdata/
