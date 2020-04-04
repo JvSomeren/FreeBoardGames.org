@@ -45,7 +45,7 @@ COPY --chown=appuser .babelrc next.config.js /appdata/
 
 ARG GA_TRACKING_CODE
 ARG GTM_ID
-ARG BGIO_SERVER_URL
+ARG BGIO_SERVER_URL="https://fbg.some.re"
 ARG GIT_REV
 RUN yarn run build
 
