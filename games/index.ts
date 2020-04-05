@@ -10,9 +10,11 @@ import { cornerusGameDef } from './cornerus';
 import { tictactoeplusGameDef } from './tictactoeplus';
 import { fourinarowGameDef } from './fourinarow';
 import { hangmanGameDef } from './hangman';
+import { codenamesGameDef } from './codenames';
 
 // Add new games here
 export const GAMES_MAP: IGameDefMap = {
+  codenames: codenamesGameDef,
   chess: chessGameDef,
   seabattle: seabattleGameDef,
   tictactoe: tictactoeGameDef,
@@ -27,6 +29,7 @@ export const GAMES_MAP: IGameDefMap = {
 };
 
 export const GAMES_LIST: IGameDef[] = [
+  GAMES_MAP.codenames,
   GAMES_MAP.chess,
   GAMES_MAP.takesix,
   GAMES_MAP.checkers,
